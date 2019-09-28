@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eUl-gH-tK9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ched View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ChedViewController" customModule="Ched" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHED" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="1" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fq9-71-nOv">
+                                <rect key="frame" x="83" y="72" width="209.5" height="231"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="231" id="yEj-he-mEC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="75"/>
+                                <color key="textColor" red="0.30588235294117649" green="0.30588235294117649" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="1" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aR7-Nw-UVk" userLabel="Calorie Label">
+                                <rect key="frame" x="83" y="251" width="209" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="2D0-U6-1yF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="56"/>
+                                <color key="textColor" red="0.30588235289999999" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ax-Sd-BKD" userLabel="Drop Down Button">
+                                <rect key="frame" x="319" y="32" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9vx-iP-sPK"/>
+                                    <constraint firstAttribute="width" constant="40" id="UrA-2b-Eoo"/>
+                                </constraints>
+                                <color key="tintColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="timeMachine">
+                                    <color key="titleColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="historyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4fS-cQ-HWP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8R-FL-QIt" userLabel="Add Ched Button">
+                                <rect key="frame" x="143.5" y="435" width="88" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="FNC-1Y-U9h"/>
+                                    <constraint firstAttribute="height" constant="88" id="Uyk-fo-ZUO"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="addChed"/>
+                                <connections>
+                                    <action selector="addChedButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qYZ-h7-4Wh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TU-xs-TJ4" userLabel="Calorie Button">
+                                <rect key="frame" x="263" y="32" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lnW-nG-Y7J"/>
+                                    <constraint firstAttribute="width" constant="40" id="pZa-p7-f8E"/>
+                                </constraints>
+                                <color key="tintColor" red="0.16862940788269043" green="0.1686248779296875" blue="0.16862577199935913" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="america">
+                                    <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="calorieButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xWW-ij-kCY"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lc0-f6-AUd" userLabel="Drop Down View">
+                                <rect key="frame" x="0.0" y="88" width="375" height="344"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vfx-dm-Z0k">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="266"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lu9-a5-xlM">
+                                            <size key="itemSize" width="376" height="252"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="totalChedsCell" id="VHz-GL-ZFw" customClass="TotalChedsCollectionViewCell" customModule="Ched" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="7" width="376" height="252"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="376" height="252"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="chedPerTime" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uid-py-z3t">
+                                                            <rect key="frame" x="91.5" y="44" width="193" height="44"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="32"/>
+                                                            <color key="textColor" white="0.19648972602739725" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cheds" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJy-No-81n">
+                                                            <rect key="frame" x="96.5" y="112" width="183.5" height="85"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="62"/>
+                                                            <color key="textColor" white="0.20050299657534246" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APs-Fs-kPu">
+                                                            <rect key="frame" x="152.5" y="184" width="71" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="rnr-p7-32k"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="APs-Fs-kPu" firstAttribute="bottom" secondItem="cJy-No-81n" secondAttribute="bottom" constant="8" id="2n4-8P-V2K"/>
+                                                    <constraint firstItem="APs-Fs-kPu" firstAttribute="centerX" secondItem="VHz-GL-ZFw" secondAttribute="centerX" id="ThH-F4-Usv"/>
+                                                    <constraint firstItem="uid-py-z3t" firstAttribute="centerY" secondItem="VHz-GL-ZFw" secondAttribute="centerY" constant="-60" id="fY1-TZ-Iqm"/>
+                                                    <constraint firstItem="cJy-No-81n" firstAttribute="centerX" secondItem="VHz-GL-ZFw" secondAttribute="centerX" id="hnG-bR-C7Q"/>
+                                                    <constraint firstItem="cJy-No-81n" firstAttribute="top" secondItem="uid-py-z3t" secondAttribute="bottom" constant="24" id="iBL-uO-BVV"/>
+                                                    <constraint firstItem="uid-py-z3t" firstAttribute="centerX" secondItem="VHz-GL-ZFw" secondAttribute="centerX" id="sZv-dO-pd1"/>
+                                                </constraints>
+                                                <size key="customSize" width="376" height="252"/>
+                                                <connections>
+                                                    <outlet property="caloriesLabel" destination="APs-Fs-kPu" id="QzH-w9-Aek"/>
+                                                    <outlet property="chedsPerTimeLabel" destination="uid-py-z3t" id="hK9-vx-rEi"/>
+                                                    <outlet property="totalChedsLabel" destination="cJy-No-81n" id="bGi-vq-stJ"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJ3-eP-y8D">
+                                        <rect key="frame" x="129.5" y="290" width="116" height="46"/>
+                                        <color key="backgroundColor" red="1" green="0.73333333329999995" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="HNM-Q7-lxh"/>
+                                            <constraint firstAttribute="width" constant="116" id="bci-em-jDW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="tintColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="View History"/>
+                                        <connections>
+                                            <segue destination="UVJ-u6-PNU" kind="show" id="cTj-gN-bEp"/>
+                                        </connections>
+                                    </button>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="qKt-vP-lgv">
+                                        <rect key="frame" x="168" y="245" width="39" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="Nkp-os-hCg"/>
+                                            <constraint firstAttribute="width" constant="39" id="pNV-0H-Zrf"/>
+                                        </constraints>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="bJ3-eP-y8D" secondAttribute="bottom" constant="8" id="06u-RV-GAW"/>
+                                    <constraint firstAttribute="height" constant="344" id="Apc-Wn-8Qn"/>
+                                    <constraint firstItem="bJ3-eP-y8D" firstAttribute="top" secondItem="vfx-dm-Z0k" secondAttribute="bottom" constant="24" id="FKR-lP-MSq"/>
+                                    <constraint firstItem="bJ3-eP-y8D" firstAttribute="centerX" secondItem="Lc0-f6-AUd" secondAttribute="centerX" id="bFh-WE-Ude"/>
+                                    <constraint firstItem="bJ3-eP-y8D" firstAttribute="top" secondItem="qKt-vP-lgv" secondAttribute="bottom" constant="8" id="el9-eu-c0c"/>
+                                    <constraint firstItem="vfx-dm-Z0k" firstAttribute="top" secondItem="Lc0-f6-AUd" secondAttribute="top" id="oae-Kh-aQy"/>
+                                    <constraint firstItem="qKt-vP-lgv" firstAttribute="centerX" secondItem="Lc0-f6-AUd" secondAttribute="centerX" id="rD5-an-ybT"/>
+                                    <constraint firstAttribute="trailing" secondItem="vfx-dm-Z0k" secondAttribute="trailing" id="yJC-FW-Kbo"/>
+                                    <constraint firstItem="vfx-dm-Z0k" firstAttribute="leading" secondItem="Lc0-f6-AUd" secondAttribute="leading" id="z3N-lK-LXm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="l8R-FL-QIt" secondAttribute="bottom" constant="80" id="1pU-3M-oTY"/>
+                            <constraint firstItem="0Ax-Sd-BKD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="1pf-kB-fhh"/>
+                            <constraint firstItem="Fq9-71-nOv" firstAttribute="top" secondItem="0Ax-Sd-BKD" secondAttribute="bottom" id="HSi-G4-Fya"/>
+                            <constraint firstItem="Lc0-f6-AUd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LyJ-im-Hhn"/>
+                            <constraint firstItem="Fq9-71-nOv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mre-2T-vUr"/>
+                            <constraint firstItem="l8R-FL-QIt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UEx-Y9-bEF"/>
+                            <constraint firstItem="0Ax-Sd-BKD" firstAttribute="leading" secondItem="1TU-xs-TJ4" secondAttribute="trailing" constant="16" id="VWT-Fu-MB7"/>
+                            <constraint firstItem="Lc0-f6-AUd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aCt-Mq-B3m"/>
+                            <constraint firstItem="1TU-xs-TJ4" firstAttribute="centerY" secondItem="0Ax-Sd-BKD" secondAttribute="centerY" id="dIl-lJ-RH3"/>
+                            <constraint firstItem="aR7-Nw-UVk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hZ8-3a-X6O"/>
+                            <constraint firstItem="Lc0-f6-AUd" firstAttribute="top" secondItem="0Ax-Sd-BKD" secondAttribute="bottom" constant="16" id="i0q-lf-3PT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Ax-Sd-BKD" secondAttribute="trailing" constant="16" id="iGc-N7-EqS"/>
+                            <constraint firstItem="aR7-Nw-UVk" firstAttribute="bottom" secondItem="Fq9-71-nOv" secondAttribute="bottom" id="uLM-V6-E6D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0hZ-RZ-nkh">
+                        <barButtonItem key="backBarButtonItem" title="Ched It!" id="yGT-Ug-BcD"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addChedButton" destination="l8R-FL-QIt" id="Tt9-pJ-VU9"/>
+                        <outlet property="calorieButton" destination="1TU-xs-TJ4" id="r8c-ox-rMq"/>
+                        <outlet property="calorieLabel" destination="aR7-Nw-UVk" id="0y9-L1-a3u"/>
+                        <outlet property="chedsEatenLabel" destination="Fq9-71-nOv" id="492-rR-TEt"/>
+                        <outlet property="dropDownView" destination="Lc0-f6-AUd" id="0um-VA-gMK"/>
+                        <outlet property="historyButton" destination="0Ax-Sd-BKD" id="Ko2-TY-f1T"/>
+                        <outlet property="totalChedsCollectionView" destination="vfx-dm-Z0k" id="FMi-06-HaJ"/>
+                        <outlet property="totalChedsPageControl" destination="qKt-vP-lgv" id="dhM-bV-E2t"/>
+                        <outlet property="viewHistoryButton" destination="bJ3-eP-y8D" id="Spj-PR-NUn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1013.6" y="133.5832083958021"/>
+        </scene>
+        <!--My History-->
+        <scene sceneID="dBS-81-sqa">
+            <objects>
+                <tableViewController id="UVJ-u6-PNU" customClass="ChedHistoryTableViewController" customModule="Ched" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="b0w-tq-rYT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sessionCell" rowHeight="80" id="WCU-AW-GcJ" customClass="MyChedSessionsTableViewCell" customModule="Ched" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WCU-AW-GcJ" id="Cke-Pg-vex">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O21-Za-WRm">
+                                            <rect key="frame" x="16" y="39" width="191" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="191" id="g1u-R3-GDO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3K4-f2-BUr">
+                                            <rect key="frame" x="16" y="11" width="191" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="191" id="7ah-qN-2fM"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cheds Eaten" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYW-mx-yeK">
+                                            <rect key="frame" x="215" y="24" width="136" height="31.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="136" id="Huf-8h-5Hn"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="23"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7f-cf-3jr">
+                                            <rect key="frame" x="295" y="55.5" width="56" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="U7f-cf-3jr" secondAttribute="trailing" constant="24" id="3Mg-6P-rs7"/>
+                                        <constraint firstItem="CYW-mx-yeK" firstAttribute="top" secondItem="Cke-Pg-vex" secondAttribute="top" constant="24" id="9b9-rQ-CWZ"/>
+                                        <constraint firstItem="O21-Za-WRm" firstAttribute="leading" secondItem="Cke-Pg-vex" secondAttribute="leadingMargin" id="9iJ-Hb-TGQ"/>
+                                        <constraint firstItem="3K4-f2-BUr" firstAttribute="top" secondItem="Cke-Pg-vex" secondAttribute="topMargin" id="JGE-As-wol"/>
+                                        <constraint firstItem="O21-Za-WRm" firstAttribute="bottom" secondItem="Cke-Pg-vex" secondAttribute="bottomMargin" id="QD6-9z-NUX"/>
+                                        <constraint firstAttribute="trailing" secondItem="CYW-mx-yeK" secondAttribute="trailing" constant="24" id="U4w-0J-cMD"/>
+                                        <constraint firstItem="O21-Za-WRm" firstAttribute="top" secondItem="Cke-Pg-vex" secondAttribute="topMargin" constant="28" id="mVC-in-brV"/>
+                                        <constraint firstItem="3K4-f2-BUr" firstAttribute="leading" secondItem="Cke-Pg-vex" secondAttribute="leadingMargin" id="tEK-8e-GD9"/>
+                                        <constraint firstAttribute="bottom" secondItem="CYW-mx-yeK" secondAttribute="bottom" constant="24" id="zS5-Mm-9tz"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="3K4-f2-BUr" secondAttribute="bottom" constant="28" id="zue-Ep-8nk"/>
+                                        <constraint firstItem="U7f-cf-3jr" firstAttribute="top" secondItem="CYW-mx-yeK" secondAttribute="bottom" id="zvb-Qy-02h"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="caloriesLabel" destination="U7f-cf-3jr" id="E20-gj-KJU"/>
+                                    <outlet property="chedsEatenLabel" destination="CYW-mx-yeK" id="Tb5-nR-ujn"/>
+                                    <outlet property="dateLabel" destination="3K4-f2-BUr" id="Pl6-WY-YTE"/>
+                                    <outlet property="timeLabel" destination="O21-Za-WRm" id="jJf-MR-29C"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UVJ-u6-PNU" id="sTh-4p-S7a"/>
+                            <outlet property="delegate" destination="UVJ-u6-PNU" id="SFX-Cw-bwt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My History" id="LvX-ox-7qR">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="jdJ-Wa-89G">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uf9-4a-iuE" customClass="CalorieBarButton" customModule="Ched" customModuleProvider="target">
+                                <rect key="frame" x="308" y="0.0" width="51" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-13" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="15" minY="5" maxX="15" maxY="5"/>
+                                <state key="normal" image="heartEmpty"/>
+                                <connections>
+                                    <action selector="calorieButtonTapped:" destination="UVJ-u6-PNU" eventType="touchUpInside" id="yfQ-Aa-PNl"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calorieButton" destination="uf9-4a-iuE" id="2K9-gy-emo"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h2w-vz-ocB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1904.8" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MOl-7i-D1u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eUl-gH-tK9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="YU0-qp-v80">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.73333333333333328" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.30588235294117649" green="0.30588235294117649" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JVo-d9-XVW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZAt-Sm-eQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="addChed" width="512" height="512"/>
+        <image name="america" width="100" height="100"/>
+        <image name="heartEmpty" width="64" height="64"/>
+        <image name="timeMachine" width="64" height="64"/>
+    </resources>
+</document>

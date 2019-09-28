@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ChedHistory" representedClassName="ChedHistory" syncable="YES" codeGenerationType="class">
+        <attribute name="dailyCheds" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="monthlyCheds" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="referenceDay" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="referenceMonth" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="referenceWeek" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="referenceYear" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="weeklyCheds" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="yearlyCheds" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="chedSessions" optional="YES" toMany="YES" deletionRule="No Action" ordered="YES" destinationEntity="ChedSession" inverseName="chedHistory" inverseEntity="ChedSession" syncable="YES"/>
+    </entity>
+    <entity name="ChedSession" representedClassName="ChedSession" syncable="YES" codeGenerationType="class">
+        <attribute name="chedsEaten" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="session" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="chedHistory" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ChedHistory" inverseName="chedSessions" inverseEntity="ChedHistory" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ChedHistory" positionX="-63" positionY="0" width="128" height="180"/>
+        <element name="ChedSession" positionX="-63" positionY="-18" width="128" height="90"/>
+    </elements>
+</model>

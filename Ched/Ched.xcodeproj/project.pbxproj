@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		380CA3FF231F2EC10097FD61 /* CalorieBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CA3FE231F2EC10097FD61 /* CalorieBarButton.swift */; };
+		380FE9E9231DBADE00D1780F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380FE9E8231DBADE00D1780F /* Assets.xcassets */; };
+		387EC628220E4FC5001EB4F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC627220E4FC5001EB4F7 /* AppDelegate.swift */; };
+		387EC62A220E4FC5001EB4F7 /* ChedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC629220E4FC5001EB4F7 /* ChedViewController.swift */; };
+		387EC62D220E4FC5001EB4F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387EC62B220E4FC5001EB4F7 /* Main.storyboard */; };
+		387EC630220E4FC5001EB4F7 /* Ched.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 387EC62E220E4FC5001EB4F7 /* Ched.xcdatamodeld */; };
+		387EC635220E4FC8001EB4F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387EC633220E4FC8001EB4F7 /* LaunchScreen.storyboard */; };
+		387EC642220E5233001EB4F7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC641220E5233001EB4F7 /* CoreDataStack.swift */; };
+		387EC644220E5274001EB4F7 /* Ched+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC643220E5274001EB4F7 /* Ched+Convenience.swift */; };
+		387EC646220E5296001EB4F7 /* ChedSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC645220E5296001EB4F7 /* ChedSessionController.swift */; };
+		387EC649220E52E0001EB4F7 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC648220E52E0001EB4F7 /* DateHelper.swift */; };
+		387EC64D220E7184001EB4F7 /* TotalChedsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC64C220E7184001EB4F7 /* TotalChedsCollectionViewCell.swift */; };
+		387EC65B220E8773001EB4F7 /* History+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC65A220E8773001EB4F7 /* History+Convenience.swift */; };
+		387EC65D220E8879001EB4F7 /* ChedHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC65C220E8879001EB4F7 /* ChedHistoryController.swift */; };
+		387EC65F220EAE54001EB4F7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC65E220EAE54001EB4F7 /* Extensions.swift */; };
+		388C3E0A2213E5D400E06704 /* ChedHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C3E092213E5D400E06704 /* ChedHistoryTableViewController.swift */; };
+		388C3E0C2213ED2300E06704 /* MyChedSessionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C3E0B2213ED2300E06704 /* MyChedSessionsTableViewCell.swift */; };
+		388C3E0F2215169400E06704 /* ChedHistorySwipeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C3E0E2215169400E06704 /* ChedHistorySwipeLayout.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		380CA3FE231F2EC10097FD61 /* CalorieBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieBarButton.swift; sourceTree = "<group>"; };
+		380FE9E8231DBADE00D1780F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		387EC624220E4FC5001EB4F7 /* Ched.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ched.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		387EC627220E4FC5001EB4F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		387EC629220E4FC5001EB4F7 /* ChedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChedViewController.swift; sourceTree = "<group>"; };
+		387EC62C220E4FC5001EB4F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		387EC62F220E4FC5001EB4F7 /* Ched.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ched.xcdatamodel; sourceTree = "<group>"; };
+		387EC634220E4FC8001EB4F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		387EC636220E4FC8001EB4F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		387EC641220E5233001EB4F7 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		387EC643220E5274001EB4F7 /* Ched+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ched+Convenience.swift"; sourceTree = "<group>"; };
+		387EC645220E5296001EB4F7 /* ChedSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChedSessionController.swift; sourceTree = "<group>"; };
+		387EC648220E52E0001EB4F7 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		387EC64C220E7184001EB4F7 /* TotalChedsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalChedsCollectionViewCell.swift; sourceTree = "<group>"; };
+		387EC65A220E8773001EB4F7 /* History+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+Convenience.swift"; sourceTree = "<group>"; };
+		387EC65C220E8879001EB4F7 /* ChedHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChedHistoryController.swift; sourceTree = "<group>"; };
+		387EC65E220EAE54001EB4F7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		388C3E092213E5D400E06704 /* ChedHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChedHistoryTableViewController.swift; sourceTree = "<group>"; };
+		388C3E0B2213ED2300E06704 /* MyChedSessionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChedSessionsTableViewCell.swift; sourceTree = "<group>"; };
+		388C3E0E2215169400E06704 /* ChedHistorySwipeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChedHistorySwipeLayout.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		387EC621220E4FC5001EB4F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		387EC61B220E4FC5001EB4F7 = {
+			isa = PBXGroup;
+			children = (
+				387EC626220E4FC5001EB4F7 /* Ched */,
+				387EC625220E4FC5001EB4F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		387EC625220E4FC5001EB4F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				387EC624220E4FC5001EB4F7 /* Ched.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		387EC626220E4FC5001EB4F7 /* Ched */ = {
+			isa = PBXGroup;
+			children = (
+				387EC627220E4FC5001EB4F7 /* AppDelegate.swift */,
+				387EC63D220E503E001EB4F7 /* ViewControllers */,
+				387EC640220E5072001EB4F7 /* ModelControllers */,
+				387EC63F220E505C001EB4F7 /* Models */,
+				388C3E0D2215164800E06704 /* Layout */,
+				387EC64B220E7157001EB4F7 /* Views */,
+				387EC647220E52B9001EB4F7 /* Utilities */,
+				387EC64A220E52FA001EB4F7 /* Extensions */,
+				387EC63E220E5050001EB4F7 /* Storyboards */,
+				387EC63C220E5021001EB4F7 /* Resources */,
+			);
+			path = Ched;
+			sourceTree = "<group>";
+		};
+		387EC63C220E5021001EB4F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				387EC636220E4FC8001EB4F7 /* Info.plist */,
+				380FE9E8231DBADE00D1780F /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		387EC63D220E503E001EB4F7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				387EC629220E4FC5001EB4F7 /* ChedViewController.swift */,
+				388C3E092213E5D400E06704 /* ChedHistoryTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		387EC63E220E5050001EB4F7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				387EC62B220E4FC5001EB4F7 /* Main.storyboard */,
+				387EC633220E4FC8001EB4F7 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		387EC63F220E505C001EB4F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				387EC62E220E4FC5001EB4F7 /* Ched.xcdatamodeld */,
+				387EC641220E5233001EB4F7 /* CoreDataStack.swift */,
+				387EC643220E5274001EB4F7 /* Ched+Convenience.swift */,
+				387EC65A220E8773001EB4F7 /* History+Convenience.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		387EC640220E5072001EB4F7 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				387EC65C220E8879001EB4F7 /* ChedHistoryController.swift */,
+				387EC645220E5296001EB4F7 /* ChedSessionController.swift */,
+			);
+			name = ModelControllers;
+			sourceTree = "<group>";
+		};
+		387EC647220E52B9001EB4F7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				387EC648220E52E0001EB4F7 /* DateHelper.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		387EC64A220E52FA001EB4F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				387EC65E220EAE54001EB4F7 /* Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		387EC64B220E7157001EB4F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				387EC64C220E7184001EB4F7 /* TotalChedsCollectionViewCell.swift */,
+				388C3E0B2213ED2300E06704 /* MyChedSessionsTableViewCell.swift */,
+				380CA3FE231F2EC10097FD61 /* CalorieBarButton.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		388C3E0D2215164800E06704 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				388C3E0E2215169400E06704 /* ChedHistorySwipeLayout.swift */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		387EC623220E4FC5001EB4F7 /* Ched */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 387EC639220E4FC8001EB4F7 /* Build configuration list for PBXNativeTarget "Ched" */;
+			buildPhases = (
+				387EC620220E4FC5001EB4F7 /* Sources */,
+				387EC621220E4FC5001EB4F7 /* Frameworks */,
+				387EC622220E4FC5001EB4F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ched;
+			productName = Ched;
+			productReference = 387EC624220E4FC5001EB4F7 /* Ched.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		387EC61C220E4FC5001EB4F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Eric Andersen";
+				TargetAttributes = {
+					387EC623220E4FC5001EB4F7 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1030;
+					};
+				};
+			};
+			buildConfigurationList = 387EC61F220E4FC5001EB4F7 /* Build configuration list for PBXProject "Ched" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 387EC61B220E4FC5001EB4F7;
+			productRefGroup = 387EC625220E4FC5001EB4F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				387EC623220E4FC5001EB4F7 /* Ched */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		387EC622220E4FC5001EB4F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				387EC635220E4FC8001EB4F7 /* LaunchScreen.storyboard in Resources */,
+				387EC62D220E4FC5001EB4F7 /* Main.storyboard in Resources */,
+				380FE9E9231DBADE00D1780F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		387EC620220E4FC5001EB4F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				387EC65B220E8773001EB4F7 /* History+Convenience.swift in Sources */,
+				388C3E0F2215169400E06704 /* ChedHistorySwipeLayout.swift in Sources */,
+				387EC62A220E4FC5001EB4F7 /* ChedViewController.swift in Sources */,
+				387EC628220E4FC5001EB4F7 /* AppDelegate.swift in Sources */,
+				387EC630220E4FC5001EB4F7 /* Ched.xcdatamodeld in Sources */,
+				387EC65D220E8879001EB4F7 /* ChedHistoryController.swift in Sources */,
+				387EC64D220E7184001EB4F7 /* TotalChedsCollectionViewCell.swift in Sources */,
+				387EC644220E5274001EB4F7 /* Ched+Convenience.swift in Sources */,
+				387EC642220E5233001EB4F7 /* CoreDataStack.swift in Sources */,
+				380CA3FF231F2EC10097FD61 /* CalorieBarButton.swift in Sources */,
+				388C3E0A2213E5D400E06704 /* ChedHistoryTableViewController.swift in Sources */,
+				387EC649220E52E0001EB4F7 /* DateHelper.swift in Sources */,
+				387EC65F220EAE54001EB4F7 /* Extensions.swift in Sources */,
+				387EC646220E5296001EB4F7 /* ChedSessionController.swift in Sources */,
+				388C3E0C2213ED2300E06704 /* MyChedSessionsTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		387EC62B220E4FC5001EB4F7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				387EC62C220E4FC5001EB4F7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		387EC633220E4FC8001EB4F7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				387EC634220E4FC8001EB4F7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		387EC637220E4FC8001EB4F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		387EC638220E4FC8001EB4F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		387EC63A220E4FC8001EB4F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S2V96BB45E;
+				INFOPLIST_FILE = Ched/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.EricAndersen.Ched;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		387EC63B220E4FC8001EB4F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S2V96BB45E;
+				INFOPLIST_FILE = Ched/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.EricAndersen.Ched;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		387EC61F220E4FC5001EB4F7 /* Build configuration list for PBXProject "Ched" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				387EC637220E4FC8001EB4F7 /* Debug */,
+				387EC638220E4FC8001EB4F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		387EC639220E4FC8001EB4F7 /* Build configuration list for PBXNativeTarget "Ched" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				387EC63A220E4FC8001EB4F7 /* Debug */,
+				387EC63B220E4FC8001EB4F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		387EC62E220E4FC5001EB4F7 /* Ched.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				387EC62F220E4FC5001EB4F7 /* Ched.xcdatamodel */,
+			);
+			currentVersion = 387EC62F220E4FC5001EB4F7 /* Ched.xcdatamodel */;
+			path = Ched.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 387EC61C220E4FC5001EB4F7 /* Project object */;
+}
