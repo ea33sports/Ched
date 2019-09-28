@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380CA3FF231F2EC10097FD61 /* CalorieBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CA3FE231F2EC10097FD61 /* CalorieBarButton.swift */; };
+		380FE9E9231DBADE00D1780F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380FE9E8231DBADE00D1780F /* Assets.xcassets */; };
 		387EC628220E4FC5001EB4F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC627220E4FC5001EB4F7 /* AppDelegate.swift */; };
 		387EC62A220E4FC5001EB4F7 /* ChedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC629220E4FC5001EB4F7 /* ChedViewController.swift */; };
 		387EC62D220E4FC5001EB4F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387EC62B220E4FC5001EB4F7 /* Main.storyboard */; };
 		387EC630220E4FC5001EB4F7 /* Ched.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 387EC62E220E4FC5001EB4F7 /* Ched.xcdatamodeld */; };
-		387EC632220E4FC8001EB4F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 387EC631220E4FC8001EB4F7 /* Assets.xcassets */; };
 		387EC635220E4FC8001EB4F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387EC633220E4FC8001EB4F7 /* LaunchScreen.storyboard */; };
 		387EC642220E5233001EB4F7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC641220E5233001EB4F7 /* CoreDataStack.swift */; };
 		387EC644220E5274001EB4F7 /* Ched+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EC643220E5274001EB4F7 /* Ched+Convenience.swift */; };
@@ -27,12 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		380CA3FE231F2EC10097FD61 /* CalorieBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieBarButton.swift; sourceTree = "<group>"; };
+		380FE9E8231DBADE00D1780F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		387EC624220E4FC5001EB4F7 /* Ched.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ched.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		387EC627220E4FC5001EB4F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		387EC629220E4FC5001EB4F7 /* ChedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChedViewController.swift; sourceTree = "<group>"; };
 		387EC62C220E4FC5001EB4F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		387EC62F220E4FC5001EB4F7 /* Ched.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ched.xcdatamodel; sourceTree = "<group>"; };
-		387EC631220E4FC8001EB4F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		387EC634220E4FC8001EB4F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		387EC636220E4FC8001EB4F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		387EC641220E5233001EB4F7 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -95,8 +97,8 @@
 		387EC63C220E5021001EB4F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				387EC631220E4FC8001EB4F7 /* Assets.xcassets */,
 				387EC636220E4FC8001EB4F7 /* Info.plist */,
+				380FE9E8231DBADE00D1780F /* Assets.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -160,6 +162,7 @@
 			children = (
 				387EC64C220E7184001EB4F7 /* TotalChedsCollectionViewCell.swift */,
 				388C3E0B2213ED2300E06704 /* MyChedSessionsTableViewCell.swift */,
+				380CA3FE231F2EC10097FD61 /* CalorieBarButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				TargetAttributes = {
 					387EC623220E4FC5001EB4F7 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -231,8 +235,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				387EC635220E4FC8001EB4F7 /* LaunchScreen.storyboard in Resources */,
-				387EC632220E4FC8001EB4F7 /* Assets.xcassets in Resources */,
 				387EC62D220E4FC5001EB4F7 /* Main.storyboard in Resources */,
+				380FE9E9231DBADE00D1780F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +256,7 @@
 				387EC64D220E7184001EB4F7 /* TotalChedsCollectionViewCell.swift in Sources */,
 				387EC644220E5274001EB4F7 /* Ched+Convenience.swift in Sources */,
 				387EC642220E5233001EB4F7 /* CoreDataStack.swift in Sources */,
+				380CA3FF231F2EC10097FD61 /* CalorieBarButton.swift in Sources */,
 				388C3E0A2213E5D400E06704 /* ChedHistoryTableViewController.swift in Sources */,
 				387EC649220E52E0001EB4F7 /* DateHelper.swift in Sources */,
 				387EC65F220EAE54001EB4F7 /* Extensions.swift in Sources */,
@@ -411,7 +416,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.EricAndersen.Ched;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -429,7 +434,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.EricAndersen.Ched;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

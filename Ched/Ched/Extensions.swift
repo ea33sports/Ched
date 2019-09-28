@@ -66,6 +66,7 @@ extension UIView {
         self.layer.insertSublayer(gradient, at: 0)
     }
     
+    
     func setGradientBackground(colorTop: UIColor, colorBottom: UIColor) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorBottom.cgColor, colorTop.cgColor]

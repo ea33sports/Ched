@@ -14,6 +14,7 @@ class MyChedSessionsTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var chedsEatenLabel: UILabel!
+    @IBOutlet weak var caloriesLabel: UILabel!
     
     
     

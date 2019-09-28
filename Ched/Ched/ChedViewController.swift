@@ -12,10 +12,10 @@ import CoreData
 class ChedViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var dropDownbutton: UIButton!
-    @IBOutlet weak var dropDownButtonTopAnchor: NSLayoutConstraint!
-    @IBOutlet weak var dropDownViewYAlignment: NSLayoutConstraint!
+    @IBOutlet weak var calorieButton: UIButton!
+    @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var chedsEatenLabel: UILabel!
+    @IBOutlet weak var calorieLabel: UILabel!    
     @IBOutlet weak var dropDownView: UIView!
     @IBOutlet weak var totalChedsCollectionView: UICollectionView!
     @IBOutlet weak var totalChedsPageControl: UIPageControl!
@@ -33,6 +33,8 @@ class ChedViewController: UIViewController, NSFetchedResultsControllerDelegate {
     var updatedYearlyCheds = 0
     
     var chedding = 0
+    var calories = 0
+    var caloMode = false
     
     var cell = UICollectionViewCell()
     var selectedHistoryCell = 0
@@ -50,6 +52,10 @@ class ChedViewController: UIViewController, NSFetchedResultsControllerDelegate {
         totalChedsCollectionView.delegate = self
         totalChedsCollectionView.dataSource = self
         totalChedsCollectionView.collectionViewLayout = flowLayout
+//        self.totalChedsCollectionView.register(TotalChedsCollectionViewCell.self, forCellWithReuseIdentifier: "dailyChedsCell")
+//        self.totalChedsCollectionView.register(TotalChedsCollectionViewCell.self, forCellWithReuseIdentifier: "weeklyChedsCell")
+//        self.totalChedsCollectionView.register(TotalChedsCollectionViewCell.self, forCellWithReuseIdentifier: "monthlyChedsCell")
+//        self.totalChedsCollectionView.register(TotalChedsCollectionViewCell.self, forCellWithReuseIdentifier: "yearlyChedsCell")
         
         setupMyHistory()
         configureDate()
@@ -74,7 +80,7 @@ class ChedViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     
     // MARK: - Functions
-   func setupMyHistory() {
+    func setupMyHistory() {
         do {
             try ChedHistoryController.shared.fetchedResultsController.performFetch()
         } catch {
@@ -95,7 +101,7 @@ class ChedViewController: UIViewController, NSFetchedResultsControllerDelegate {
             var referenceDay = ChedHistoryController.shared.myChedHistory?.referenceDay,
             var referenceWeek = ChedHistoryController.shared.myChedHistory?.referenceWeek,
             var referenceMonth = ChedHistoryController.shared.myChedHistory?.referenceMonth,
-            var referenceYear = ChedHistoryController.shared.myChedHistory?.referenceYear else { fatalError() }
+            var referenceYear = ChedHistoryController.shared.myChedHistory?.referenceYear else { return }
         
         if now.isInSameDay(date: referenceDay) {
             updatedDailyCheds = Int(myHistory.dailyCheds)
@@ -133,16 +139,26 @@ class ChedViewController: UIViewController, NSFetchedResultsControllerDelegate {
         
         guard let myHistory = ChedHistoryController.shared.myChedHistory else { return }
         view.addVerticalGradientLayer(topColor: #colorLiteral(red: 1, green: 0.7333333333, blue: 0.3490196078, alpha: 1), bottomColor: #colorLiteral(red: 0.5176470588, green: 0.7803921569, blue: 0.6431372549, alpha: 1))
-        chedsEatenLabel.text = "CHED"
-        dropDownbutton.setTitle("\(myHistory.dailyCheds)", for: .normal)
+        calorieLabel.isHidden = true
         
-        dropDownbutton.layer.masksToBounds = false
-        dropDownbutton.layer.cornerRadius = dropDownbutton.frame.height / 8
-        dropDownbutton.clipsToBounds = true
+//        dropDownbutton.setTitle("\(myHistory.dailyCheds)", for: .normal)
+        historyButton.setImage(#imageLiteral(resourceName: "timeTable"), for: .normal)
+        calorieButton.setImage(#imageLiteral(resourceName: "heartEmpty"), for: .normal)
+        historyButton.imageView?.contentMode = .scaleAspectFit
+        calorieButton.imageView?.contentMode = .scaleAspectFit
+        
+        historyButton.layer.masksToBounds = false
+        historyButton.layer.cornerRadius = historyButton.frame.height / 8
+        historyButton.clipsToBounds = true
         
         viewHistoryButton.layer.masksToBounds = false
         viewHistoryButton.layer.cornerRadius = viewHistoryButton.frame.height / 8
         viewHistoryButton.clipsToBounds = true
+        
+        if chedding == 0 {
+            chedsEatenLabel.text = "CHED"
+            calorieButton.isEnabled = false
+        }
     }
     
     
@@ -177,9 +193,56 @@ class ChedViewController: UIViewController, NSFetchedResultsControllerDelegate {
     }
     
     
+    func toggleSessionCalories() {
+        if caloMode == false {
+            caloMode = true
+            calorieButton.setImage(#imageLiteral(resourceName: "heartFull"), for: .normal)
+            calorieLabel.isHidden = false
+            addChedButton.isHidden = true
+            chedsEatenLabel.text = String(updatedCalories(currentCheds: chedding))
+        } else {
+            caloMode = false
+            calorieButton.setImage(#imageLiteral(resourceName: "heartEmpty"), for: .normal)
+            calorieLabel.isHidden = true
+            addChedButton.isHidden = false
+            chedsEatenLabel.text = String(chedding)
+        }
+    }
+    
+    
+    func cancelToggleSessionCalories() {
+        calorieLabel.isHidden = true
+    }
+    
+    
+    func toggleDropdownCalories() {
+        let dropDownCell = cell as? TotalChedsCollectionViewCell
+        if caloMode == false {
+            caloMode = true
+            calorieButton.setImage(#imageLiteral(resourceName: "heartFull"), for: .normal)
+            dropDownCell?.caloriesLabel.isHidden = false
+            addChedButton.isHidden = true
+            chedsEatenLabel.text = String(updatedCalories(currentCheds: chedding))
+        } else {
+            caloMode = false
+            calorieButton.setImage(#imageLiteral(resourceName: "heartEmpty"), for: .normal)
+            dropDownCell?.caloriesLabel.isHidden = true
+            addChedButton.isHidden = false
+            chedsEatenLabel.text = String(chedding)
+        }
+    }
+    
+    
+    func updatedCalories(currentCheds: Int) -> Int {
+        var calories = 0
+        calories = currentCheds * 4
+        return calories
+    }
+    
+    
     func toggleDropDown() {
         
-        guard let myHistory = ChedHistoryController.shared.myChedHistory  else { return }
+        guard let myHistory = ChedHistoryController.shared.myChedHistory else { return }
         
         if dropDownView.isHidden {
             
@@ -188,14 +251,18 @@ class ChedViewController: UIViewController, NSFetchedResultsControllerDelegate {
             UIView.animate(withDuration: 0.5) {
                 self.chedsEatenLabel.isHidden = true
                 self.chedsEatenLabel.alpha = 0
+                self.calorieLabel.isHidden = true
                 self.dropDownView.isHidden = false
                 self.dropDownView.slideInFromTop()
                 self.dropDownView.alpha = 1
+                self.calorieButton.isEnabled = true
                 self.addChedButton.alpha = 0
                 self.addChedButton.isHidden = true
-                self.dropDownbutton.setImage(#imageLiteral(resourceName: "backUp"), for: .normal)
-                self.dropDownbutton.imageView?.contentMode = .scaleAspectFit
-                self.dropDownbutton.imageView?.tintColor = #colorLiteral(red: 0.168627451, green: 0.168627451, blue: 0.168627451, alpha: 1)
+                UIView.performWithoutAnimation {
+                    self.historyButton.setImage(#imageLiteral(resourceName: "timeTableHighlighted2"), for: .normal)
+                    self.historyButton.imageView?.contentMode = .scaleAspectFit
+                }
+                self.historyButton.imageView?.tintColor = #colorLiteral(red: 0.168627451, green: 0.168627451, blue: 0.168627451, alpha: 1)
             }
             
         } else {
@@ -205,12 +272,19 @@ class ChedViewController: UIViewController, NSFetchedResultsControllerDelegate {
                 self.dropDownView.alpha = 0
                 self.chedsEatenLabel.isHidden = false
                 self.chedsEatenLabel.alpha = 1
+                self.calorieLabel.isHidden = false
                 self.addChedButton.alpha = 1
                 self.addChedButton.isHidden = false
-                self.dropDownbutton.setImage(nil, for: .normal)
-                self.dropDownbutton.setTitle("\(myHistory.dailyCheds)", for: .normal)
+                self.calorieLabel.isEnabled = true
+                UIView.performWithoutAnimation {
+                    self.historyButton.setImage(#imageLiteral(resourceName: "timeTable"), for: .normal)
+//                    self.dropDownbutton.setImage(UIImage(), for: .normal)
+//                    self.dropDownbutton.setTitle("\(myHistory.dailyCheds)", for: .normal)
+                }
             }
+            
             totalChedsCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: false)
+            updateView()
         }
     }
     
@@ -220,18 +294,41 @@ class ChedViewController: UIViewController, NSFetchedResultsControllerDelegate {
         guard let myHistory = ChedHistoryController.shared.myChedHistory else { return }
         dropDownView.isHidden = true
         dropDownView.alpha = 0
+        historyButton.setImage(#imageLiteral(resourceName: "timeTable"), for: .normal)
         chedsEatenLabel.isHidden = false
         chedsEatenLabel.alpha = 1
         addChedButton.alpha = 1
         addChedButton.isHidden = false
-        dropDownbutton.setImage(nil, for: .normal)
-        dropDownbutton.setTitle("\(myHistory.dailyCheds)", for: .normal)
+        
+        if chedding == 0 {
+            chedsEatenLabel.text = "CHED"
+            calorieButton.isEnabled = false
+        }
+        
+        if chedsEatenLabel.text == "CHED" {
+            calorieButton.isEnabled = false
+        } else {
+            calorieButton.isEnabled = true
+        }
     }
     
     
     
     // MARK: - IBActions
-    @IBAction func dropDownButtonTapped(_ sender: UIButton) {
+    @IBAction func calorieButtonTapped(_ sender: UIButton) {
+        
+        if dropDownView.isHidden {
+            toggleSessionCalories()
+        } else {
+            cancelToggleSessionCalories()
+            toggleDropdownCalories()
+        }
+        
+        totalChedsCollectionView.reloadData()
+    }
+    
+    
+    @IBAction func historyButtonTapped(_ sender: UIButton) {
         toggleDropDown()
     }
     
@@ -240,9 +337,10 @@ class ChedViewController: UIViewController, NSFetchedResultsControllerDelegate {
         UIButton.animate(withDuration: 0.2, delay: 0, options: .allowUserInteraction, animations: {
             sender.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
             guard let myHistory = ChedHistoryController.shared.myChedHistory else { return }
+            self.calorieButton.isEnabled = true
             self.updateCheds()
             self.updateChedHistory()
-            self.dropDownbutton.setTitle("\(myHistory.dailyCheds)", for: .normal)
+//            self.dropDownbutton.setTitle("\(myHistory.dailyCheds)", for: .normal)
         }) { (finish) in
             UIButton.animate(withDuration: 0.2, delay: 0, options: .allowUserInteraction, animations: {
                 sender.transform = CGAffineTransform.identity
@@ -285,37 +383,71 @@ extension ChedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         guard let myHistory = ChedHistoryController.shared.myChedHistory else { fatalError() }
         
-        if indexPath.row == 0 {
-            guard let dailyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "totalChedsCell", for: indexPath) as? TotalChedsCollectionViewCell else { return UICollectionViewCell() }
-            dailyCell.chedsPerTimeLabel.text = "Today"
-            dailyCell.totalChedsLabel.text = String(myHistory.dailyCheds)
-//            dailyCell.backgroundColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
-            cell = dailyCell
+        if caloMode == false {
+            if indexPath.item == 0 {
+                guard let dailyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "totalChedsCell", for: indexPath) as? TotalChedsCollectionViewCell else { return UICollectionViewCell() }
+                dailyCell.chedsPerTimeLabel.text = "Today"
+                dailyCell.totalChedsLabel.text = String(myHistory.dailyCheds)
+                dailyCell.caloriesLabel.isHidden = true
+                cell = dailyCell
+                
+            } else if indexPath.item == 1 {
+                guard let weeklyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "totalChedsCell", for: indexPath) as? TotalChedsCollectionViewCell else { return UICollectionViewCell() }
+                weeklyCell.chedsPerTimeLabel.text = "This Week"
+                weeklyCell.totalChedsLabel.text = String(myHistory.weeklyCheds)
+                weeklyCell.caloriesLabel.isHidden = true
+                cell = weeklyCell
+                
+            } else if indexPath.item == 2 {
+                guard let monthlyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "totalChedsCell", for: indexPath) as? TotalChedsCollectionViewCell else { return UICollectionViewCell() }
+                monthlyCell.chedsPerTimeLabel.text = "This Month"
+                monthlyCell.totalChedsLabel.text = String(myHistory.monthlyCheds)
+                monthlyCell.caloriesLabel.isHidden = true
+                cell = monthlyCell
+                
+            } else if indexPath.item == 3 {
+                guard let yearlyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "totalChedsCell", for: indexPath) as? TotalChedsCollectionViewCell else { return UICollectionViewCell() }
+                yearlyCell.chedsPerTimeLabel.text = "This Year"
+                yearlyCell.totalChedsLabel.text = String(myHistory.yearlyCheds)
+                yearlyCell.caloriesLabel.isHidden = true
+                cell = yearlyCell
+            }
             
-        } else if indexPath.row == 1 {
-            guard let weeklyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "totalChedsCell", for: indexPath) as? TotalChedsCollectionViewCell else { return UICollectionViewCell() }
-            weeklyCell.chedsPerTimeLabel.text = "This Week"
-            weeklyCell.totalChedsLabel.text = String(myHistory.weeklyCheds)
-//            weeklyCell.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-            cell = weeklyCell
+        } else {
             
-        } else if indexPath.row == 2 {
-            guard let monthlyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "totalChedsCell", for: indexPath) as? TotalChedsCollectionViewCell else { return UICollectionViewCell() }
-            monthlyCell.chedsPerTimeLabel.text = "This Month"
-            monthlyCell.totalChedsLabel.text = String(myHistory.monthlyCheds)
-//            monthlyCell.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-            cell = monthlyCell
-            
-        } else if indexPath.row == 3 {
-            guard let yearlyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "totalChedsCell", for: indexPath) as? TotalChedsCollectionViewCell else { return UICollectionViewCell() }
-            yearlyCell.chedsPerTimeLabel.text = "This Year"
-            yearlyCell.totalChedsLabel.text = String(myHistory.yearlyCheds)
-//            yearlyCell.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-            cell = yearlyCell
+            if indexPath.item == 0 {
+                guard let dailyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "totalChedsCell", for: indexPath) as? TotalChedsCollectionViewCell else { return UICollectionViewCell() }
+                dailyCell.chedsPerTimeLabel.text = "Today"
+                dailyCell.totalChedsLabel.text = String(updatedCalories(currentCheds: Int(myHistory.dailyCheds)))
+                dailyCell.caloriesLabel.isHidden = false
+                cell = dailyCell
+                
+            } else if indexPath.item == 1 {
+                guard let weeklyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "totalChedsCell", for: indexPath) as? TotalChedsCollectionViewCell else { return UICollectionViewCell() }
+                weeklyCell.chedsPerTimeLabel.text = "This Week"
+                weeklyCell.totalChedsLabel.text = String(updatedCalories(currentCheds: Int(myHistory.weeklyCheds)))
+                weeklyCell.caloriesLabel.isHidden = false
+                cell = weeklyCell
+                
+            } else if indexPath.item == 2 {
+                guard let monthlyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "totalChedsCell", for: indexPath) as? TotalChedsCollectionViewCell else { return UICollectionViewCell() }
+                monthlyCell.chedsPerTimeLabel.text = "This Month"
+                monthlyCell.totalChedsLabel.text = String(updatedCalories(currentCheds: Int(myHistory.monthlyCheds)))
+                monthlyCell.caloriesLabel.isHidden = false
+                cell = monthlyCell
+                
+            } else if indexPath.item == 3 {
+                guard let yearlyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "totalChedsCell", for: indexPath) as? TotalChedsCollectionViewCell else { return UICollectionViewCell() }
+                yearlyCell.chedsPerTimeLabel.text = "This Year"
+                yearlyCell.totalChedsLabel.text = String(updatedCalories(currentCheds: Int(myHistory.yearlyCheds)))
+                yearlyCell.caloriesLabel.isHidden = false
+                cell = yearlyCell
+            }
         }
         
         return cell
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         totalChedsPageControl.currentPage = indexPath.row
