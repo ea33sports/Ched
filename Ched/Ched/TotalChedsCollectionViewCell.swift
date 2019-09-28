@@ -20,14 +20,8 @@ class TotalChedsCollectionViewCell: UICollectionViewCell {
     func toggleCalories() {
         if caloriesLabel.isHidden == true {
             caloriesLabel.isHidden = false
-//            caloMode = true
-//            addChedButton.isHidden = true
-//            chedsEatenLabel.text = String(updatedCalories(currentCheds: chedding))
         } else {
             caloriesLabel.isHidden = true
-//            caloMode = false
-//            addChedButton.isHidden = false
-//            chedsEatenLabel.text = String(chedding)
         }
     }
 }
